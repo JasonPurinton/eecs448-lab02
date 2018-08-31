@@ -34,10 +34,11 @@ int LinkedList<T>::size() const
 	*/
 	int size =0;
 
-	if(isEmpty())
+	if(isEmpty())//Checking if is a list at all
 	{
-		m_front = new Node<T>(value);
+
 	}
+	else
 	return(size);
 }
 
