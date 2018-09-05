@@ -30,16 +30,10 @@ template <typename T>
 int LinkedList<T>::size() const
 {
 	/** TODO
-		Fix this method
+		Fix this method//////////////////////////////////////////////////
 	*/
-	int size =0;
-
-	if(isEmpty())//Checking if is a list at all
-	{
-
-	}
-	else
-	return(size);
+	// Returns the size of the list
+	return m_size; 
 }
 
 template <typename T>
