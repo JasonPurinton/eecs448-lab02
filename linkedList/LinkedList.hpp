@@ -33,13 +33,13 @@ int LinkedList<T>::size() const
 		Fix this method//////////////////////////////////////////////////
 	*/
 	// Returns the size of the list
-	return m_size; 
+	return m_size;
 }
 
 template <typename T>
 bool LinkedList<T>::search(T value) const
 {
-	Node<T>* temp = m_front;
+//	Node<T>* temp = m_front;
 	bool isFound = false;
 
 	/** TODO
@@ -100,15 +100,48 @@ void LinkedList<T>::addFront(T value)
 template <typename T>
 bool LinkedList<T>::removeBack()
 {
-	Node<T>* lastNode = nullptr;
+/*	Node<T>* lastNode = nullptr;
 	Node<T>* secondintoLast = nullptr;
-	bool isRemoved = false;
+//	bool isRemoved = false;
 
 	/** TODO
 		Fix this method
 	*/
 
-	return(isRemoved);
+		// Create a node pointer to look at the front of the array.
+	Node<T>* tempPtr = m_front;
+	if(!isEmpty())
+	{
+		// If this is not the last node in list
+		if(tempPtr->getNext() != nullptr)
+		{
+			//Next pointer isn't null
+			while(tempPtr->getNext()->getNext()!= nullptr)
+			{
+				tempPtr= tempPtr->getNext();
+			}
+			// Delete the last pointe
+			delete tempPtr->getNext();
+			tempPtr->setNext(nullptr);
+			m_size--;
+			//Return that we just deleted a node.
+			return true;
+		}
+		// If this is the last node in the list
+		else
+		{
+			//Make m_front point at null
+			m_front = nullptr;
+			// Delete this node that we're pointing at,
+			delete tempPtr;
+			m_size--;
+			// Return that we deleted a node.
+			return true;
+		}
+	}
+	// Return false since you can't delete a node if there are no nodes.
+	else return false;
+//	return(isRemoved);
 }
 
 template <typename T>
