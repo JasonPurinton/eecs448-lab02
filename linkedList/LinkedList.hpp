@@ -39,14 +39,6 @@ int LinkedList<T>::size() const
 template <typename T>
 bool LinkedList<T>::search(T value) const
 {
-	bool isFound= true;
-	/** TODO
-		Fix this method
-	int tempPosition = 1;
-
-
-
-
 Node<T>* tempPtr = m_front;
 bool isFound = false;
 	// Flag to tell if the method is exit.
@@ -56,24 +48,15 @@ bool isFound = false;
 		while(tempPtr != nullptr && !exit)
 		{
 			// If the position we're looking at is the same as the input position,
-			if(value == getValue();)
+			if(value == tempPtr->getValue())
 			{
 				isFound= true;
 				exit = true;
 			}
 			// Make the temporary pointer look at the next node in the list.
 			tempPtr = tempPtr->getNext();
-			// Increment the position counter.
-			tempPosition++;
 		}
 	}
-
-*/
-
-
-
-
-
 	return(isFound);
 }
 
