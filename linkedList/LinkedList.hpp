@@ -6,9 +6,10 @@
 */
 
 template <typename T>
-LinkedList<T>::LinkedList() : m_front(nullptr), m_size(0)
+LinkedList<T>::LinkedList()
 {
-
+	m_front= nullptr;
+	m_size= 0;
 }
 
 template <typename T>
@@ -31,19 +32,6 @@ bool LinkedList<T>::isEmpty() const
 template <typename T>
 int LinkedList<T>::size() const
 {
-	/** TODO
-		Fix this method//////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-	*/
 	// Returns the size of the list
 	return m_size;
 }
@@ -51,11 +39,11 @@ int LinkedList<T>::size() const
 template <typename T>
 bool LinkedList<T>::search(T value) const
 {
-
+	bool isFound= true;
 	/** TODO
 		Fix this method
 	int tempPosition = 1;
-*/
+
 
 
 
@@ -80,14 +68,7 @@ bool isFound = false;
 		}
 	}
 
-
-
-
-
-
-
-
-
+*/
 
 
 
