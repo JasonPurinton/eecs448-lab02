@@ -8,7 +8,7 @@
 template <typename T>
 LinkedList<T>::LinkedList() : m_front(nullptr), m_size(0)
 {
- 
+
 }
 
 template <typename T>
@@ -23,7 +23,9 @@ LinkedList<T>::~LinkedList()
 template <typename T>
 bool LinkedList<T>::isEmpty() const
 {
-	return(m_size == 0);
+		// Checks if list is empty
+	if(m_front == nullptr) return true;
+	return(false);
 }
 
 template <typename T>
@@ -31,6 +33,16 @@ int LinkedList<T>::size() const
 {
 	/** TODO
 		Fix this method//////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
 	*/
 	// Returns the size of the list
 	return m_size;
@@ -39,12 +51,47 @@ int LinkedList<T>::size() const
 template <typename T>
 bool LinkedList<T>::search(T value) const
 {
-//	Node<T>* temp = m_front;
-	bool isFound = false;
 
 	/** TODO
 		Fix this method
-	*/
+	int tempPosition = 1;
+*/
+
+
+
+Node<T>* tempPtr = m_front;
+bool isFound = false;
+	// Flag to tell if the method is exit.
+	bool exit = false;
+	if(tempPtr != nullptr && !isFound)
+	{
+		while(tempPtr != nullptr && !exit)
+		{
+			// If the position we're looking at is the same as the input position,
+			if(value == getValue();)
+			{
+				isFound= true;
+				exit = true;
+			}
+			// Make the temporary pointer look at the next node in the list.
+			tempPtr = tempPtr->getNext();
+			// Increment the position counter.
+			tempPosition++;
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	return(isFound);
 }
@@ -61,7 +108,7 @@ std::vector<T> LinkedList<T>::toVector() const
 		temp = temp->getNext();
 	}
 
-	return(vec); 
+	return(vec);
 
 }
 
