@@ -80,7 +80,6 @@ template <typename T>
 void LinkedList<T>::addBack(T value)
 {
 	Node<T>* temp = nullptr;
-
 	if(isEmpty())
 	{
 		m_front = new Node<T>(value);
@@ -92,10 +91,8 @@ void LinkedList<T>::addBack(T value)
 		{
 			temp = temp->getNext();
 		}
-
 		temp->setNext( new Node<T>(value) );
 	}
-
 	m_size++;
 }
 
@@ -111,14 +108,7 @@ void LinkedList<T>::addFront(T value)
 template <typename T>
 bool LinkedList<T>::removeBack()
 {
-/*	Node<T>* lastNode = nullptr;
-	Node<T>* secondintoLast = nullptr;
-//	bool isRemoved = false;
-
-	/** TODO
-		Fix this method
-	*/
-
+	bool isRemoved = false;
 		// Create a node pointer to look at the front of the array.
 	Node<T>* tempPtr = m_front;
 	if(!isEmpty())
@@ -136,7 +126,7 @@ bool LinkedList<T>::removeBack()
 			tempPtr->setNext(nullptr);
 			m_size--;
 			//Return that we just deleted a node.
-			return true;
+			isRemoved= true;
 		}
 		// If this is the last node in the list
 		else
@@ -147,12 +137,10 @@ bool LinkedList<T>::removeBack()
 			delete tempPtr;
 			m_size--;
 			// Return that we deleted a node.
-			return true;
+			isRemoved= true;
 		}
 	}
-	// Return false since you can't delete a node if there are no nodes.
-	else return false;
-//	return(isRemoved);
+	return(isRemoved);
 }
 
 template <typename T>
@@ -160,7 +148,6 @@ bool LinkedList<T>::removeFront()
 {
 	Node<T>* temp = nullptr;
 	bool isRemoved = false;
-
 	if(!isEmpty())
 	{
 		temp = m_front;
